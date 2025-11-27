@@ -1,6 +1,6 @@
 {
   "name": "random-pokemon-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A generator for the g!randteam format and its permutations",
   "main": "main.js",
   "author": "",
@@ -45,12 +45,12 @@
       "signAndEditExecutable": false
     },
     "portable": {
-      "artifactName": "RandomPokemonGenerator-Portable.exe"
+      "artifactName": "grandteam-portable-${version}.exe"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "artifactName": "RandomPokemonGenerator-Setup.exe"
+      "artifactName": "grandteam-setup-${version}.exe"
     }
   },
   "keywords": [
