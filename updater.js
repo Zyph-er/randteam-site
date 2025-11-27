@@ -6,7 +6,7 @@ autoUpdater.autoDownload = false; // We'll trigger download manually after user 
 autoUpdater.autoInstallOnAppQuit = true; // Install when app closes
 
 // Placeholder GitHub repo URL - replace with your actual repo
-const CURRENT_VERSION = '1.0.0'; // Update this with each release
+const CURRENT_VERSION = '1.0.1'; // Update this with each release
 
 function setupAutoUpdater(mainWindow) {
     // Check for updates on startup

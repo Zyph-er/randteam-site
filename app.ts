@@ -449,8 +449,8 @@ function getRandomPokemonWithForme(basePokemon: Pokemon): Pokemon {
                 
                 // Check if it's a Gen 9 mega and should be excluded
                 const isMega = formeData.forme && formeData.forme.toLowerCase().includes('mega');
-                const isGen9 = formeData.num >= 906 && formeData.num <= 1025;
-                const excludeMega = isMega && isGen9 && !gen9MegasEnabled;
+                const isGen9Mega = isMega && formeData.gen === 9;
+                const excludeMega = isGen9Mega && !gen9MegasEnabled;
                 
                 if (colorMatch && eggMatch && !excludeMega) {
                     validFormes.push({id: formeId, index: idx + 1});
@@ -661,10 +661,11 @@ function rerollCurrentPokemon(): void {
     trashedPokemon.push(currentRerollPokemon);
     rerollsRemaining--;
     
-    // Generate new pokemon
+    // Generate new pokemon from filtered list (respects all filters including CAP and Gen 9 Megas)
     if (filteredPokemon.length > 0) {
         const randomIndex = Math.floor(Math.random() * filteredPokemon.length);
-        currentRerollPokemon = getRandomPokemonWithForme(filteredPokemon[randomIndex]);
+        const basePokemon = filteredPokemon[randomIndex];
+        currentRerollPokemon = getRandomPokemonWithForme(basePokemon);
         displayRerollInterface();
     }
 }

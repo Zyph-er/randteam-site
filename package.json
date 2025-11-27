@@ -1,6 +1,6 @@
 {
   "name": "random-pokemon-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A generator for the g!randteam format and its permutations",
   "main": "main.js",
   "author": "",
