@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G!Randteam Pokemon Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>G!randteam Generator</h1>
+        </header>
+
+        <div class="filters">
+            <div class="filter-group">
+                <button id="region-toggle" class="filter-toggle">Regions ▼</button>
+                <div id="region-checkboxes" class="checkbox-group hidden">
+                    <label><input type="checkbox" value="kanto"> Kanto</label>
+                    <label><input type="checkbox" value="johto"> Johto</label>
+                    <label><input type="checkbox" value="hoenn"> Hoenn</label>
+                    <label><input type="checkbox" value="sinnoh"> Sinnoh</label>
+                    <label><input type="checkbox" value="unova"> Unova</label>
+                    <label><input type="checkbox" value="kalos"> Kalos</label>
+                    <label><input type="checkbox" value="alola"> Alola</label>
+                    <label><input type="checkbox" value="galar"> Galar</label>
+                    <label><input type="checkbox" value="paldea"> Paldea</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button id="type-toggle" class="filter-toggle">Types ▼</button>
+                <div id="type-checkboxes" class="checkbox-group hidden">
+                    <label><input type="checkbox" value="normal"> Normal</label>
+                    <label><input type="checkbox" value="fire"> Fire</label>
+                    <label><input type="checkbox" value="water"> Water</label>
+                    <label><input type="checkbox" value="grass"> Grass</label>
+                    <label><input type="checkbox" value="electric"> Electric</label>
+                    <label><input type="checkbox" value="ice"> Ice</label>
+                    <label><input type="checkbox" value="fighting"> Fighting</label>
+                    <label><input type="checkbox" value="poison"> Poison</label>
+                    <label><input type="checkbox" value="ground"> Ground</label>
+                    <label><input type="checkbox" value="flying"> Flying</label>
+                    <label><input type="checkbox" value="psychic"> Psychic</label>
+                    <label><input type="checkbox" value="bug"> Bug</label>
+                    <label><input type="checkbox" value="rock"> Rock</label>
+                    <label><input type="checkbox" value="ghost"> Ghost</label>
+                    <label><input type="checkbox" value="dragon"> Dragon</label>
+                    <label><input type="checkbox" value="dark"> Dark</label>
+                    <label><input type="checkbox" value="steel"> Steel</label>
+                    <label><input type="checkbox" value="fairy"> Fairy</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button id="color-toggle" class="filter-toggle">Colors ▼</button>
+                <div id="color-checkboxes" class="checkbox-group hidden">
+                    <label><input type="checkbox" value="Black"> Black</label>
+                    <label><input type="checkbox" value="Blue"> Blue</label>
+                    <label><input type="checkbox" value="Brown"> Brown</label>
+                    <label><input type="checkbox" value="Gray"> Gray</label>
+                    <label><input type="checkbox" value="Green"> Green</label>
+                    <label><input type="checkbox" value="Pink"> Pink</label>
+                    <label><input type="checkbox" value="Purple"> Purple</label>
+                    <label><input type="checkbox" value="Red"> Red</label>
+                    <label><input type="checkbox" value="White"> White</label>
+                    <label><input type="checkbox" value="Yellow"> Yellow</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button id="egg-toggle" class="filter-toggle">Egg Groups ▼</button>
+                <div id="egg-checkboxes" class="checkbox-group hidden">
+                    <label><input type="checkbox" value="Monster"> Monster</label>
+                    <label><input type="checkbox" value="Water 1"> Water 1</label>
+                    <label><input type="checkbox" value="Water 2"> Water 2</label>
+                    <label><input type="checkbox" value="Water 3"> Water 3</label>
+                    <label><input type="checkbox" value="Bug"> Bug</label>
+                    <label><input type="checkbox" value="Flying"> Flying</label>
+                    <label><input type="checkbox" value="Field"> Field</label>
+                    <label><input type="checkbox" value="Fairy"> Fairy</label>
+                    <label><input type="checkbox" value="Grass"> Grass</label>
+                    <label><input type="checkbox" value="Human-Like"> Human-Like</label>
+                    <label><input type="checkbox" value="Mineral"> Mineral</label>
+                    <label><input type="checkbox" value="Amorphous"> Amorphous</label>
+                    <label><input type="checkbox" value="Dragon"> Dragon</label>
+                    <label><input type="checkbox" value="Undiscovered"> Undiscovered</label>
+                    <label><input type="checkbox" value="Ditto"> Ditto</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Min Weight (kg)</label>
+                <input type="number" id="min-weight" min="0" max="10000" value="0" step="0.1">
+            </div>
+
+            <div class="filter-group">
+                <label>Min Height (m)</label>
+                <input type="number" id="min-height" min="0" max="10000" value="0" step="0.1">
+            </div>
+
+            <div class="filter-group">
+                <label>Number of Pokémon</label>
+                <select id="quantity-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12" selected>12</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Mode</label>
+                <select id="mode-select">
+                    <option value="standard">Standard</option>
+                    <option value="reroll">Reroll Mode</option>
+                </select>
+            </div>
+
+            <div id="reroll-settings" class="reroll-settings hidden">
+                <div class="filter-group">
+                    <label>Rerolls Available</label>
+                    <select id="reroll-count-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6" selected>6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Reroll Scope</label>
+                    <select id="reroll-scope-select">
+                        <option value="all">All Pokémon</option>
+                        <option value="per-pokemon">Per Pokémon</option>
+                    </select>
+                </div>
+            </div>
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="gen9-megas-check">
+                Gen 9 Megas
+            </label>
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="cap-mons-check">
+                CAP Mons
+            </label>
+        </div>
+
+        <div class="nav-controls">
+            <button id="prev-btn" class="nav-btn">← Previous</button>
+            <button id="generate-btn" class="btn-primary">Generate</button>
+            <button id="clear-btn" class="btn-secondary">Clear</button>
+            <button id="copy-btn" class="btn-secondary">Copy Names</button>
+            <button id="next-btn" class="nav-btn">Next →</button>
+        </div>
+
+        <div id="result-container" class="result-container hidden">
+            <div id="reroll-interface" class="reroll-interface hidden">
+                <div class="reroll-header">
+                    <p>Rerolls Remaining: <span id="rerolls-remaining">6</span></p>
+                </div>
+                <div class="reroll-content">
+                    <div id="current-pokemon" class="current-pokemon"></div>
+                    <div id="pokemon-stats" class="pokemon-stats">
+                        <h3>Base Stats</h3>
+                        <div class="stat-row">
+                            <span class="stat-label">HP</span>
+                            <span class="stat-value" id="stat-hp">0</span>
+                            <div class="stat-bar"><div class="stat-fill" id="bar-hp"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Attack</span>
+                            <span class="stat-value" id="stat-atk">0</span>
+                            <div class="stat-bar"><div class="stat-fill" id="bar-atk"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Defense</span>
+                            <span class="stat-value" id="stat-def">0</span>
+                            <div class="stat-bar"><div class="stat-fill" id="bar-def"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Sp. Atk</span>
+                            <span class="stat-value" id="stat-spa">0</span>
+                            <div class="stat-bar"><div class="stat-fill" id="bar-spa"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Sp. Def</span>
+                            <span class="stat-value" id="stat-spd">0</span>
+                            <div class="stat-bar"><div class="stat-fill" id="bar-spd"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Speed</span>
+                            <span class="stat-value" id="stat-spe">0</span>
+                            <div class="stat-bar"><div class="stat-fill" id="bar-spe"></div></div>
+                        </div>
+                        <div class="stat-total">
+                            <span class="stat-label">Total</span>
+                            <span class="stat-value" id="stat-total">0</span>
+                        </div>
+                        <div class="abilities-section">
+                            <h3>Abilities</h3>
+                            <div id="abilities-list"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reroll-actions">
+                    <button id="keep-btn" class="btn-success">✓ Keep</button>
+                    <button id="reroll-btn" class="btn-warning">↻ Reroll</button>
+                </div>
+            </div>
+            
+            <div id="generated-grid"></div>
+            
+            <div id="trashed-container" class="trashed-container hidden">
+                <h3>Discarded Pokémon</h3>
+                <div id="trashed-grid" class="trashed-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnpm-debug.log
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+coverage/
+
+# Compiled output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Electron
+*.asar
+release/
+release/**
+latest.yml
+*.exe
+*.AppImage
+*.deb
+*.rpm
+*.dmg
+*.zip
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Misc
+.cache/
+.tmp/
+
+# Ignore local development secrets
+secrets.json
+selfCHANGES.md
+selfREADME.md
+AUTO_UPDATER_SETUP.md
+BUNDLING_GUIDE.md
+DISTRIBUTION_GUIDE.md
+# Keep package lock if you prefer, uncomment to ignore
+# package-lock.json
